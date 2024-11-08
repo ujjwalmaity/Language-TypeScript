@@ -87,6 +87,37 @@ var C = /** @class */ (function (_super) {
     };
     return C;
 }(M));
-var c1 = new C();
-c1.testM();
-c1.testC();
+// var c1 = new C();
+// c1.testM();
+// c1.testC();
+// Access Modifiers
+// Public, Protected, Private
+var D = /** @class */ (function () {
+    function D() {
+        // public name: string = "Mike";
+        this.name = "Mike";
+        this.city = "New York";
+        this.pin = "10001";
+    }
+    D.prototype.getAddress = function () {
+        return "".concat(this.name, ", ").concat(this.city, ", ").concat(this.pin);
+    };
+    return D;
+}());
+var E = /** @class */ (function (_super) {
+    __extends(E, _super);
+    function E() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    E.prototype.getCity = function () {
+        return this.city;
+    };
+    return E;
+}(D));
+// var d1 = new D();
+// console.log(d1.name);
+// console.log(d1.city); // Error
+// console.log(d1.pin); // Error
+// console.log(d1.getAddress());
+// var e1 = new E();
+// console.log(e1.getCity());

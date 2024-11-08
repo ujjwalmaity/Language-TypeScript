@@ -90,6 +90,33 @@ class C extends M {
     }
 }
 
-var c1 = new C();
-c1.testM();
-c1.testC();
+// var c1 = new C();
+// c1.testM();
+// c1.testC();
+
+// Access Modifiers
+// Public, Protected, Private
+class D {
+    // public name: string = "Mike";
+    name: string = "Mike";
+    protected city: string = "New York";
+    private pin: string = "10001";
+
+    getAddress(): string {
+        return `${this.name}, ${this.city}, ${this.pin}`;
+    }
+}
+
+class E extends D {
+    getCity(): string {
+        return this.city;
+    }
+}
+
+// var d1 = new D();
+// console.log(d1.name);
+// console.log(d1.city); // Error
+// console.log(d1.pin); // Error
+// console.log(d1.getAddress());
+// var e1 = new E();
+// console.log(e1.getCity());
