@@ -120,10 +120,28 @@ var CardinalDirections;
     CardinalDirections["South"] = "South";
     CardinalDirections["West"] = "West";
 })(CardinalDirections || (CardinalDirections = {}));
-;
 // console.log();
 // console.log(Color);
 // console.log(Color.Red);
 // console.log(Color[0]);
 // console.log(StatusCodes.Success);
 // console.log(CardinalDirections.West);
+// var, let, const
+function test5() {
+    if (true) {
+        var l1 = 1;
+        l1 = 10;
+        console.log(l1);
+        var l2 = 2;
+        l2 = 20;
+        console.log(l2);
+        var l3 = 3;
+        // l3 = 30; // Error
+        console.log(l3);
+    }
+    console.log(l1);
+    // console.log(l2); // Error
+    // console.log(l3); // Error
+}
+// test5();
+// console.log(l1); // Error

@@ -115,7 +115,7 @@ enum CardinalDirections {
     East = "East",
     South = "South",
     West = "West"
-};
+}
 
 // console.log();
 // console.log(Color);
@@ -123,3 +123,26 @@ enum CardinalDirections {
 // console.log(Color[0]);
 // console.log(StatusCodes.Success);
 // console.log(CardinalDirections.West);
+
+// var, let, const
+function test5(): void {
+    if (true) {
+        var l1: number = 1;
+        l1 = 10;
+        console.log(l1);
+
+        let l2: number = 2;
+        l2 = 20;
+        console.log(l2);
+
+        const l3: number = 3;
+        // l3 = 30; // Error
+        console.log(l3);
+    }
+    console.log(l1);
+    // console.log(l2); // Error
+    // console.log(l3); // Error
+}
+
+// test5();
+// console.log(l1); // Error
