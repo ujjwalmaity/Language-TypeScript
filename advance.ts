@@ -25,7 +25,7 @@ class A {
     }
 
     static sTest(): void {
-        console.log('class A static sTest() method');
+        console.log('class A - static method sTest()');
     }
 }
 
@@ -61,11 +61,11 @@ class B implements X, Y {
     city: string;
 
     testX(): void {
-        console.log(`class B - testX() method ${this.city}`);
+        console.log(`class B - method testX(), variable ${this.city}`);
     }
 
     testY(): void {
-        console.log(`class B - testY() method`);
+        console.log(`class B - method testY()`);
     }
 }
 
@@ -73,3 +73,23 @@ class B implements X, Y {
 // b1.city = 'Kol';
 // b1.testX();
 // b1.testY();
+
+// Class Inheritance
+class M {
+    testM(): void {
+        console.log("class M - method testM()");
+    }
+}
+
+class C extends M {
+    testC(): void {
+        let x = () => {
+            console.log("class C - method testC() - function x()");
+        }
+        x();
+    }
+}
+
+var c1 = new C();
+c1.testM();
+c1.testC();

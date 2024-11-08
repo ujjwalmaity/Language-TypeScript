@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // Class
 // Non static variable
 // Constructor
@@ -17,7 +32,7 @@ var A = /** @class */ (function () {
         return this.city;
     };
     A.sTest = function () {
-        console.log('class A static sTest() method');
+        console.log('class A - static method sTest()');
     };
     A.country = "India";
     return A;
@@ -39,10 +54,10 @@ var B = /** @class */ (function () {
     function B() {
     }
     B.prototype.testX = function () {
-        console.log("class B - testX() method ".concat(this.city));
+        console.log("class B - method testX(), variable ".concat(this.city));
     };
     B.prototype.testY = function () {
-        console.log("class B - testY() method");
+        console.log("class B - method testY()");
     };
     return B;
 }());
@@ -50,3 +65,28 @@ var B = /** @class */ (function () {
 // b1.city = 'Kol';
 // b1.testX();
 // b1.testY();
+// Class Inheritance
+var M = /** @class */ (function () {
+    function M() {
+    }
+    M.prototype.testM = function () {
+        console.log("class M - method testM()");
+    };
+    return M;
+}());
+var C = /** @class */ (function (_super) {
+    __extends(C, _super);
+    function C() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    C.prototype.testC = function () {
+        var x = function () {
+            console.log("class C - method testC() - function x()");
+        };
+        x();
+    };
+    return C;
+}(M));
+var c1 = new C();
+c1.testM();
+c1.testC();
